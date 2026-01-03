@@ -1,8 +1,9 @@
 "use client";
 
+import Footer from "@/app/componats/Footer";
+import Header from "@/app/componats/Header";
 import { motion } from "framer-motion";
-import Header from "../componats/Header";
-import Footer from "../componats/Footer";
+
 
 
 const fade = {
