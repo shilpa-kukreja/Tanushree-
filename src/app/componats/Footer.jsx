@@ -95,7 +95,7 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item.slug}>
                   <Link
-                    href={`/services?category=${item.slug}`}
+                    href={`/services/${item.slug}`}
                     className="hover:text-[#bfa760] transition"
                   >
                     {item.name}
@@ -124,7 +124,7 @@ export default function Footer() {
                 ].map((item) => (
                   <li key={item.slug}>
                     <Link
-                      href={`/services?category=${item.slug}`}
+                       href={`/services/${cat.slug}`}
                       className="hover:text-[#bfa760] transition"
                     >
                       {item.name}

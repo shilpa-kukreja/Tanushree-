@@ -31,13 +31,12 @@ function Header() {
       {/* ================= HEADER ================= */}
       <header
         className={`fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500
-        ${
-          isHome
+        ${isHome
             ? isScrolled
               ? "bg-white/95 shadow-xl"
               : "bg-transparent"
             : "bg-[#fcfbf4] shadow-md"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
@@ -69,7 +68,7 @@ function Header() {
                 {serviceCategories.map((cat) => (
                   <Link
                     key={cat.slug}
-                    href={`/services?category=${cat.slug}`}
+                    href={`/services/${cat.slug}`}
                     className="block px-8 py-4 text-sm hover:bg-[#f7f6f3] transition"
                   >
                     {cat.name}
@@ -83,36 +82,36 @@ function Header() {
             </Link>
           </nav>
 
-              <button className="group relative hidden md:block  overflow-hidden px-6 py-3 rounded-xl
+          <button className="group relative hidden md:block  overflow-hidden px-6 py-3 rounded-xl
 bg-gradient-to-r from-[#e2b54d] via-[#faea7f] to-[#ebbd4b]
 shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50
 transition-all duration-300 hover:scale-105">
 
-          {/* CONTINUOUS SHINE */}
-          <span className="absolute inset-0 
+            {/* CONTINUOUS SHINE */}
+            <span className="absolute inset-0 
   bg-gradient-to-r from-transparent via-white/60 to-transparent
   animate-shine" />
 
-          {/* CONTENT */}
-          <div className="relative flex items-center justify-center space-x-3">
-            <span className="font-bold capitalize text-blue-900 tracking-wide">
-              Get Premium
-            </span>
-            <svg
-              className="w-5 h-5 text-blue-900 transform group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </div>
-        </button>
+            {/* CONTENT */}
+            <div className="relative flex items-center justify-center space-x-3">
+              <span className="font-bold capitalize text-blue-900 tracking-wide">
+                Get Premium
+              </span>
+              <svg
+                className="w-5 h-5 text-blue-900 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
+          </button>
 
           {/* MOBILE BUTTON */}
           <button
@@ -192,12 +191,14 @@ transition-all duration-300 hover:scale-105">
                 {serviceCategories.map((cat) => (
                   <Link
                     key={cat.slug}
-                    href={`/services?category=${cat.slug}`}
+                    href={`/services/${cat.slug}`}
                     onClick={() => setMobileOpen(false)}
                     className="block text-gray-600"
                   >
                     {cat.name}
                   </Link>
+
+
                 ))}
               </div>
             </div>
