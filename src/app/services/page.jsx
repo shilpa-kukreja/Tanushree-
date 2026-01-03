@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import Header from "../componats/Header";
 import Footer from "../componats/Footer";
+import { useRouter } from "next/navigation";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
@@ -93,8 +94,9 @@ const servicesData = {
 };
 
 export default function ServicesPage() {
-  const searchParams = useSearchParams();
-  const category = searchParams.get("category") || "real-estate";
+   const router = useRouter();
+  
+  const category = router.get("category") || "real-estate";
 
   const current = servicesData[category];
 
