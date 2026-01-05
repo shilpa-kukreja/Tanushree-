@@ -44,7 +44,7 @@ function WhyChooseUsSimple() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {features.map((feature, index) => (
             <div key={index} className="bg-gray-50 hover:bg-white hover:shadow-xl border-2 rounded-sm border-[#bfa760] transition-all duration-300">
-              <Image src={feature.image}  width={100} height={100} alt={feature.title} className="mb-4 w-full " />
+              <Image src={feature.image}  width={1080} height={100} alt={feature.title} className="mb-4 w-full " />
               <div className="p-4">
                  <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {feature.title}
