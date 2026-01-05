@@ -102,7 +102,7 @@ transition-all duration-300 hover:scale-105">
                 <div className="text-gray-600 text-sm">Client Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-[#c49827] to-yellow-400 bg-clip-text text-transparent">15+</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#c49827] to-yellow-400 bg-clip-text text-transparent">20+</div>
                 <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
             </div>
