@@ -7,19 +7,19 @@ function WhyChooseUsSimple() {
       title: "Diverse Expertise",
       description: "With a strong presence across Real Estate, Education, and Hospitality, Tanushree Group brings diversified expertise under one trusted name. Since 2006, our multi-sector experience allows us to understand varied needs and deliver solutions with depth, clarity, and consistency.",
       icon: "https://images.unsplash.com/photo-1560518883-ce090…fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      image: "/assets/img/image/Diverse Expertise (1).jpg",
+      image: "/assets/img/image/expertise.jpg",
     },
     {
       title: "Empowering Dreams",
       description: " We believe our work should elevate lives. From creating secure homes and nurturing future-ready minds to delivering refined hospitality experiences, every initiative is designed to turn aspirations into meaningful realities.",
       icon: "https://images.unsplash.com/photo-1560518883-ce090…fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      image: "/assets/img/image/Empowering Dreams (1).jpg",
+      image: "/assets/img/image/empowering dreams (2).jpg",
     },
     {
       title: "Unwavering Support",
       description: "Our commitment does not end with delivery. We stand by our clients, partners, students, and guests with transparent communication, ethical practices, and dependable support at every stage of the journey.",
       icon: "https://images.unsplash.com/photo-1560518883-ce090…fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      image: "/assets/img/image/Unwavering Support (1).jpg",
+      image: "/assets/img/image/unwavering support (2).jpg",
     }
   ];
 
