@@ -21,7 +21,7 @@ export default function AdminLogin() {
 
     try {
       const res = await axios.post(
-        "https://tanushreegroup.com/api/admin/adminlogin",
+        (`${process.env.NEXT_PUBLIC_API_URL}/api/admin/adminlogin`),
         { email, password }
       );
 
