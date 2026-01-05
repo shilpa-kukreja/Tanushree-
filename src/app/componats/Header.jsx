@@ -14,30 +14,143 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // Add this
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   useEffect(() => {
+    setIsMounted(true); // Component is now mounted on client
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > window.innerHeight);
     };
+    
+    // Only run on client side
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Determine header classes without conditional logic that changes between server/client
+  const getHeaderClasses = () => {
+    // On server or initial render, use default classes
+    if (!isMounted) {
+      // Server-side render - use a consistent default
+      return "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-white/95 shadow-md";
+    }
+    
+    // Client-side only logic
+    if (isHome) {
+      return isScrolled 
+        ? "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-white/95 shadow-xl"
+        : "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-transparent";
+    } else {
+      return "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-[#fcfbf4] shadow-md";
+    }
+  };
+
+  // Fix 1: Remove line breaks from class strings
+  // Fix 2: Use consistent class names for the gradient button
+  
+  const getGradientButtonClasses = () => {
+    return [
+      "group",
+      "relative",
+      "hidden",
+      "md:block",
+      "overflow-hidden",
+      "px-6",
+      "py-3",
+      "rounded-xl",
+      "bg-gradient-to-r",
+      "from-[#e2b54d]",
+      "via-[#faea7f]",
+      "to-[#ebbd4b]",
+      "shadow-lg",
+      "shadow-yellow-500/30",
+      "hover:shadow-yellow-500/50",
+      "transition-all",
+      "duration-300",
+      "hover:scale-105"
+    ].join(" ");
+  };
+
+  const getShineSpanClasses = () => {
+    return [
+      "absolute",
+      "inset-0",
+      "bg-gradient-to-r",
+      "from-transparent",
+      "via-white/60",
+      "to-transparent",
+      "animate-shine"
+    ].join(" ");
+  };
+
+  const getMobileCTAClasses = () => {
+    return [
+      "block",
+      "text-center",
+      "mt-10",
+      "py-4",
+      "rounded-xl",
+      "font-bold",
+      "bg-gradient-to-r",
+      "from-[#e2b54d]",
+      "via-[#faea7f]",
+      "to-[#ebbd4b]",
+      "text-blue-900",
+      "shadow-lg"
+    ].join(" ");
+  };
+
+  const getFooterCallClasses = () => {
+    return [
+      "group",
+      "relative",
+      "flex",
+      "h-14",
+      "w-14",
+      "items-center",
+      "justify-center",
+      "rounded-full",
+      "bg-gradient-to-r",
+      "from-[#e2b54d]",
+      "via-[#faea7f]",
+      "to-[#ebbd4b]",
+      "shadow-lg",
+      "shadow-yellow-500/30",
+      "hover:shadow-yellow-500/50",
+      "transition-all",
+      "duration-300"
+    ].join(" ");
+  };
+
+  const getFooterWhatsappClasses = () => {
+    return [
+      "group",
+      "relative",
+      "flex",
+      "h-14",
+      "w-14",
+      "items-center",
+      "justify-center",
+      "rounded-full",
+      "bg-gradient-to-r",
+      "from-green-500",
+      "to-emerald-600",
+      "shadow-lg",
+      "shadow-green-500/30",
+      "hover:shadow-green-500/50",
+      "transition-all",
+      "duration-300"
+    ].join(" ");
+  };
+
   return (
     <>
       {/* ================= HEADER ================= */}
-      <header
-        className={`fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500
-        ${isHome
-            ? isScrolled
-              ? "bg-white/95 shadow-xl"
-              : "bg-transparent"
-            : "bg-[#fcfbf4] shadow-md"
-          }`}
-      >
+      <header className={getHeaderClasses()}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
@@ -50,7 +163,7 @@ function Header() {
             />
           </Link>
 
-          {/* DESKTOP NAV (UNCHANGED) */}
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center space-x-10">
             <Link href="/" className="font-medium hover:text-golden">
               Home
@@ -82,17 +195,10 @@ function Header() {
             </Link>
           </nav>
 
-          <button className="group relative hidden md:block  overflow-hidden px-6 py-3 rounded-xl
-bg-gradient-to-r from-[#e2b54d] via-[#faea7f] to-[#ebbd4b]
-shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50
-transition-all duration-300 hover:scale-105">
-
-            {/* CONTINUOUS SHINE */}
-            <span className="absolute inset-0 
-  bg-gradient-to-r from-transparent via-white/60 to-transparent
-  animate-shine" />
-
-            {/* CONTENT */}
+          {/* FIXED: No line breaks in class string */}
+          <button className={getGradientButtonClasses()}>
+            <span className={getShineSpanClasses()} />
+            
             <div className="relative flex items-center justify-center space-x-3">
               <span className="font-bold capitalize text-blue-900 tracking-wide">
                 Get Premium
@@ -197,8 +303,6 @@ transition-all duration-300 hover:scale-105">
                   >
                     {cat.name}
                   </Link>
-
-
                 ))}
               </div>
             </div>
@@ -212,13 +316,11 @@ transition-all duration-300 hover:scale-105">
             Contact
           </Link>
 
-          {/* CTA */}
+          {/* CTA - FIXED: No line breaks */}
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="block text-center mt-10 py-4 rounded-xl font-bold
-            bg-gradient-to-r from-[#e2b54d] via-[#faea7f] to-[#ebbd4b]
-            text-blue-900 shadow-lg"
+            className={getMobileCTAClasses()}
           >
             GET PREMIUM
           </Link>
