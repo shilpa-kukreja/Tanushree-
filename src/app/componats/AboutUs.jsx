@@ -94,8 +94,8 @@ transition-all duration-300 hover:scale-105">
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-[#c49827] to-yellow-400 bg-clip-text text-transparent">250+</div>
-                <div className="text-gray-600 text-sm">Projects Completed</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#c49827] to-yellow-400 bg-clip-text text-transparent">99%</div>
+                <div className="text-gray-600 text-sm">Timely Possession</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-[#c49827] to-yellow-400 bg-clip-text text-transparent">98%</div>
