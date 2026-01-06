@@ -91,10 +91,10 @@ export default function AboutPage() {
       {/* STATS */}
       <section className="sm:py-28 py-14 bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6 md:gap-16 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 text-center">
             {[
               { number: "20+", label: "Years of Expertise" },
-              { number: "₹5,000Cr+", label: "Transactions" },
+              // { number: "₹5,000Cr+", label: "Transactions" },
               { number: "1,000+", label: "Private Clients" },
               { number: "Global", label: "Investor Network" },
             ].map((item, index) => (
