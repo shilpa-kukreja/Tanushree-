@@ -199,7 +199,7 @@ function Header() {
           <button className={getGradientButtonClasses()}>
             <span className={getShineSpanClasses()} />
             
-            <div className="relative flex items-center justify-center space-x-3">
+            <Link href="/contact" className="relative flex items-center justify-center space-x-3">
               <span className="font-bold capitalize text-blue-900 tracking-wide">
                 Get Premium
               </span>
@@ -216,7 +216,7 @@ function Header() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </div>
+            </Link>
           </button>
 
           {/* MOBILE BUTTON */}
