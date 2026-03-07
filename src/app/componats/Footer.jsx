@@ -35,7 +35,7 @@ export default function Footer() {
   const companyLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
+    // { label: "Services", href: "/services" },
     // { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ];
@@ -229,7 +229,7 @@ export default function Footer() {
 
         {/* WHATSAPP BUTTON */}
         <a
-          href="//wa.me/+91 99999 98811"
+          href="https://wa.me/+91 99999 98811?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
           aria-label="WhatsApp"
           target="_blank"
           rel="noopener noreferrer"
