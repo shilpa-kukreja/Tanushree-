@@ -194,14 +194,9 @@ const servicesData = {
 };
 
 export default async function ServicesPage({ params }) {
-  const { category } = params;
-
-  const current =
-    servicesData[category] ?? servicesData["real-estate"];
-
-  const banner =
-    categoryBanners[category] ||
-    categoryBanners["real-estate"];
+     const { category } = await params;
+    const current = servicesData[category] ?? servicesData["real-estate"];
+    const banner = categoryBanners[category] || categoryBanners["real-estate"];
 
   return (
     <div className="bg-white text-[#111]">
