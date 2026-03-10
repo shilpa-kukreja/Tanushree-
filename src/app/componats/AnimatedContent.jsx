@@ -243,6 +243,29 @@ export function AnimatedContent({ category, current, banner }) {
         </section>
       )}
 
+      {/* ================= GENERAL IMAGE SECTION (HOSPITALITY) ================= */}
+      {current.images && (
+        <section className="sm:py-24 py-12 px-6">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
+            {current.images.map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="overflow-hidden rounded-xl"
+              >
+                <img
+                  src={img}
+                  alt="service"
+                  className="w-full h-[260px] object-cover hover:scale-105 transition duration-500"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* ================= PROCESS ================= */}
       <section className="sm:py-32 py-12 px-6">
         <div className="max-w-6xl mx-auto text-center">
