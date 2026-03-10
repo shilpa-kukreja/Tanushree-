@@ -170,7 +170,6 @@ export function AnimatedContent({ category, current, banner }) {
             {current.subtitle}
           </p>
 
-          {/* Show link only if exists (Hospitality) */}
           {current.link && (
             <a
               href={current.link}
@@ -207,25 +206,39 @@ export function AnimatedContent({ category, current, banner }) {
         </div>
       </section>
 
-      {/* ================= IMAGE SECTION (ONLY REAL ESTATE & HOSPITALITY) ================= */}
-      {current.images && (
+      {/* ================= REAL ESTATE PROJECTS ================= */}
+      {current.projects && (
         <section className="sm:py-24 py-12 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
-            {current.images.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="overflow-hidden rounded-xl"
-              >
-                <img
-                  src={img}
-                  alt="service"
-                  className="w-full h-[260px] object-cover hover:scale-105 transition duration-500"
-                />
-              </motion.div>
+          <div className="max-w-7xl mx-auto">
+
+            {current.projects.map((project, i) => (
+              <div key={i} className="mb-20">
+
+                <h2 className="text-3xl md:text-4xl font-light mb-10 text-center">
+                  {project.name}
+                </h2>
+
+                <div className="grid md:grid-cols-4 gap-6">
+                  {project.images.map((img, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="overflow-hidden rounded-xl"
+                    >
+                      <img
+                        src={img}
+                        alt={project.name}
+                        className="w-full h-[260px] object-cover hover:scale-105 transition duration-500"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+
+              </div>
             ))}
+
           </div>
         </section>
       )}

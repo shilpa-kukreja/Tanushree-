@@ -14,7 +14,7 @@
 //     "real-estate": {
 //         title: "Real Estate Services",
 //         subtitle: "Bespoke advisory and transaction services for premium residential and commercial assets.",
-       
+
 //         services: [
 //             {
 //                 title: "Luxury Residential Sales",
@@ -122,11 +122,29 @@ const servicesData = {
       },
     ],
 
-    images: [
-      "/assets/img/image/image1 (1).jpeg",
-      "/assets/img/image/image1 (2).jpeg",
-      "/assets/img/image/image1 (3).jpeg",
-      "/assets/img/image/image1 (4).jpeg",
+    projects: [
+      {
+        name: "Tanushree Arcade (Commercial)",
+        images: [
+          "/assets/img/image/Artboard 5.jpg",
+          "/assets/img/image/Artboard 6.jpg",
+          "/assets/img/image/Artboard 7.jpg",
+          "/assets/img/image/Artboard 8.jpg",
+          "/assets/img/image/Artboard 9.jpg",
+          "/assets/img/image/Artboard 10.jpg",
+          "/assets/img/image/Artboard 11.jpg",
+          "/assets/img/image/Artboard 12.jpg",
+        ],
+      },
+      {
+        name: "Krishna Kunj (Residential)",
+        images: [
+          "/assets/img/image/Artboard 1.jpg",
+          "/assets/img/image/Artboard 2.jpg",
+          "/assets/img/image/Artboard 3.jpg",
+          "/assets/img/image/Artboard 4.jpg",
+        ],
+      },
     ],
   },
 
@@ -172,18 +190,11 @@ const servicesData = {
         desc: "High-yield hospitality investment advisory and portfolio structuring.",
       },
     ],
-
-    images: [
-     "/assets/img/image/image1 (1).jpeg",
-      "/assets/img/image/image1 (2).jpeg",
-      "/assets/img/image/image1 (3).jpeg",
-      "/assets/img/image/image1 (4).jpeg",
-    ],
   },
 };
 
 export default async function ServicesPage({ params }) {
-  const { category } = await params;
+  const { category } = params;
 
   const current =
     servicesData[category] ?? servicesData["real-estate"];
