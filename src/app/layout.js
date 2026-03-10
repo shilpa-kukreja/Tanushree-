@@ -43,13 +43,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Tanushreegroup",
-  description: "Tanushree Group - Real Estate Development Company",
-  applicationName: "Tanushreegroup",
+  title: {
+    default: "Tanushree Group",
+    template: "%s | Tanushree Group",
+  },
+  description: "Tanushree Group - Real Estate, Education and Hospitality Company",
+  applicationName: "Tanushree Group",
   openGraph: {
-    title: "Tanushreegroup",
-    description: "Tanushree Group - Real Estate Development Company",
-    siteName: "Tanushreegroup",
+    title: "Tanushree Group",
+    description: "Tanushree Group - Real Estate, Education and Hospitality",
+    siteName: "Tanushree Group",
     url: "https://tanushreegroup.com",
     locale: "en_US",
     type: "website",
@@ -59,21 +62,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Tanushreegroup",
-    alternateName: "Tanushree Group",
+    "@type": "Organization",
+    name: "Tanushree Group",
     url: "https://tanushreegroup.com",
   };
 
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="iOuRn1ZxbAaTjowhNl58Nph1mgZy7UslHMxwd6mSBV8" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-       <meta name="google-site-verification" content="iOuRn1ZxbAaTjowhNl58Nph1mgZy7UslHMxwd6mSBV8" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
