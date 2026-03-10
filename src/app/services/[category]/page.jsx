@@ -143,6 +143,7 @@ const servicesData = {
           "/assets/img/image/Artboard 2.jpg",
           "/assets/img/image/Artboard 3.jpg",
           "/assets/img/image/Artboard 4.jpg",
+          "/assets/img/image/Krishna 1.jpg", "/assets/img/image/Krishna 2.jpg", "/assets/img/image/Krishna 3.jpg", "/assets/img/image/Krishna 4.jpg",
         ],
       },
     ],
@@ -190,9 +191,7 @@ const servicesData = {
         desc: "High-yield hospitality investment advisory and portfolio structuring.",
       },
     ],
-    images: ["/assets/img/image/image1 (1).jpeg", "/assets/img/image/image1 (2).jpeg", "/assets/img/image/image1 (3).jpeg", "/assets/img/image/image1 (4).jpeg",
-      "/assets/img/image/Krishna 1.jpg", "/assets/img/image/Krishna 2.jpg", "/assets/img/image/Krishna 3.jpg", "/assets/img/image/Krishna 4.jpg",
-    ],
+    images: ["/assets/img/image/image1 (1).jpeg", "/assets/img/image/image1 (2).jpeg", "/assets/img/image/image1 (3).jpeg", "/assets/img/image/image1 (4).jpeg",],
   },
 };
 
