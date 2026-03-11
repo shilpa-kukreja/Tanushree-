@@ -2,7 +2,7 @@ import { AnimatedContent } from "@/app/componats/AnimatedContent";
 import Footer from "@/app/componats/Footer";
 import Header from "@/app/componats/Header";
 
-const banner = "/assets/img/image/Real.png";
+const banner = "/assets/img/image/commercial.jpeg";
 
 const commercialData = {
   title: "Commercial Real Estate",
