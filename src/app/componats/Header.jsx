@@ -5,26 +5,34 @@ import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 const serviceCategories = [
-  { name: "Real Estate", slug: "real-estate" },
+  {
+    name: "Real Estate",
+    slug: "real-estate",
+    sub: [
+      { name: "Residential", slug: "residential" },
+      { name: "Commercial", slug: "commercial" }
+    ]
+  },
   { name: "Education", slug: "education" },
   { name: "Hospitality", slug: "hospitality" },
 ];
-
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false); // Add this
+  const [isMounted, setIsMounted] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
+
   useEffect(() => {
     setIsMounted(true); // Component is now mounted on client
-    
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > window.innerHeight);
     };
-    
+
     // Only run on client side
     handleScroll();
     window.addEventListener("scroll", handleScroll);
@@ -38,10 +46,10 @@ function Header() {
       // Server-side render - use a consistent default
       return "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-white/95 shadow-md";
     }
-    
+
     // Client-side only logic
     if (isHome) {
-      return isScrolled 
+      return isScrolled
         ? "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-white/95 shadow-xl"
         : "fixed w-full top-0 z-50 backdrop-blur-md transition-all duration-500 bg-transparent";
     } else {
@@ -51,7 +59,7 @@ function Header() {
 
   // Fix 1: Remove line breaks from class strings
   // Fix 2: Use consistent class names for the gradient button
-  
+
   const getGradientButtonClasses = () => {
     return [
       "group",
@@ -179,13 +187,32 @@ function Header() {
               </span>
               <div className="absolute left-1/2 -translate-x-1/2 top-full mt-6 w-64 bg-white rounded-md shadow-2xl border border-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 {serviceCategories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/services/${cat.slug}`}
-                    className="block px-8 py-4 text-sm hover:bg-[#f7f6f3] transition"
-                  >
-                    {cat.name}
-                  </Link>
+                  <div key={cat.slug} className="group/inner relative">
+
+                    <Link
+                      href={`/services/${cat.slug}`}
+                      className="block px-8 py-4 text-sm hover:bg-[#f7f6f3]"
+                    >
+                      {cat.name}
+                    </Link>
+
+                    {cat.sub && (
+                      <div className="absolute left-full top-0 w-52 bg-white shadow-xl opacity-0 invisible group-hover/inner:visible group-hover/inner:opacity-100 transition">
+
+                        {cat.sub.map((sub) => (
+                          <Link
+                            key={sub.slug}
+                            href={`/services/${cat.slug}/${sub.slug}`}
+                            className="block px-6 py-3 text-sm hover:bg-[#f7f6f3]"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+
+                      </div>
+                    )}
+
+                  </div>
                 ))}
               </div>
             </div>
@@ -198,7 +225,7 @@ function Header() {
           {/* FIXED: No line breaks in class string */}
           <button className={getGradientButtonClasses()}>
             <span className={getShineSpanClasses()} />
-            
+
             <Link href="/contact" className="relative flex items-center justify-center space-x-3">
               <span className="font-bold capitalize text-blue-900 tracking-wide">
                 Get Premium
@@ -295,14 +322,34 @@ function Header() {
             >
               <div className="ml-4 space-y-3">
                 {serviceCategories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/services/${cat.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-gray-600"
-                  >
-                    {cat.name}
-                  </Link>
+                  <div key={cat.slug}>
+
+                    <Link
+                      href={`/services/${cat.slug}`}
+                      onClick={() => setMobileOpen(false)}
+                      className="block text-gray-600"
+                    >
+                      {cat.name}
+                    </Link>
+
+                    {cat.sub && (
+                      <div className="ml-4 mt-2 space-y-2">
+
+                        {cat.sub.map((sub) => (
+                          <Link
+                            key={sub.slug}
+                            href={`/services/${cat.slug}/${sub.slug}`}
+                            onClick={() => setMobileOpen(false)}
+                            className="block text-sm text-gray-500"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+
+                      </div>
+                    )}
+
+                  </div>
                 ))}
               </div>
             </div>
