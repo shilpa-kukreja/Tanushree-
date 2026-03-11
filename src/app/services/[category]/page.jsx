@@ -107,6 +107,8 @@ const servicesData = {
     subtitle:
       "Bespoke advisory and transaction services for premium residential and commercial assets.",
 
+    showServices: true,
+
     services: [
       {
         title: "Luxury Residential Sales",
@@ -143,7 +145,10 @@ const servicesData = {
           "/assets/img/image/Artboard 2.jpg",
           "/assets/img/image/Artboard 3.jpg",
           "/assets/img/image/Artboard 4.jpg",
-          "/assets/img/image/Krishna 1.jpg", "/assets/img/image/Krishna 2.jpg", "/assets/img/image/Krishna 3.jpg", "/assets/img/image/Krishna 4.jpg",
+          "/assets/img/image/Krishna 1.jpg",
+          "/assets/img/image/Krishna 2.jpg",
+          "/assets/img/image/Krishna 3.jpg",
+          "/assets/img/image/Krishna 4.jpg",
         ],
       },
     ],
@@ -153,6 +158,8 @@ const servicesData = {
     title: "Education Services",
     subtitle:
       "Strategic consulting and development solutions for modern educational institutions.",
+
+    showServices: true,
 
     services: [
       {
@@ -177,6 +184,8 @@ const servicesData = {
 
     link: "https://tanushreegrandbanquets.com/",
 
+    showServices: true,
+
     services: [
       {
         title: "Hotel & Resort Advisory",
@@ -191,14 +200,23 @@ const servicesData = {
         desc: "High-yield hospitality investment advisory and portfolio structuring.",
       },
     ],
-    images: ["/assets/img/image/image1 (1).jpeg", "/assets/img/image/image1 (2).jpeg", "/assets/img/image/image1 (3).jpeg", "/assets/img/image/image1 (4).jpeg",],
+
+    images: [
+      "/assets/img/image/image1 (1).jpeg",
+      "/assets/img/image/image1 (2).jpeg",
+      "/assets/img/image/image1 (3).jpeg",
+      "/assets/img/image/image1 (4).jpeg",
+    ],
   },
 };
 
 export default async function ServicesPage({ params }) {
   const { category } = await params;
+
   const current = servicesData[category] ?? servicesData["real-estate"];
-  const banner = categoryBanners[category] || categoryBanners["real-estate"];
+
+  const banner =
+    categoryBanners[category] || categoryBanners["real-estate"];
 
   return (
     <div className="bg-white text-[#111]">

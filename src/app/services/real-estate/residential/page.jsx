@@ -9,24 +9,9 @@ const residentialData = {
   subtitle:
     "Strategic guidance and curated property solutions for modern homes and smart residential investments.",
 
-  services: [
-    {
-      title: "Premium Apartments",
-      desc: "Expert guidance for upscale apartments and modern residential developments in sought after neighborhoods.",
-    },
-    {
-      title: "Villas & Private Homes",
-      desc: "Dedicated advisory for luxury villas and spacious independent homes in prime residential areas.",
-    },
-    {
-      title: "Smart Property Investments",
-      desc: "Curated residential opportunities designed for long term growth, stability, and attractive rental potential.",
-    },
-  ],
-
   projects: [
     {
-      name: "Krishna Kunj (Residential)",
+      name: "Krishna Tanushree Kunj (Residential)",
       images: [
         "/assets/img/image/Krishnaa 1.jpg",
         "/assets/img/image/Krishnaa 2.jpg",
@@ -36,11 +21,12 @@ const residentialData = {
         "/assets/img/image/Krishnaa 6.jpg",
         "/assets/img/image/Krishnaa 7.jpg",
         "/assets/img/image/Krishnaa 8.jpg",
-         "/assets/img/image/Krishnaa 9.jpg",
+        "/assets/img/image/Krishnaa 9.jpg",
       ],
     },
   ],
-   processTitle: "OUR PROCESS",
+
+  processTitle: "OUR PROCESS",
   processHeading: "A Thoughtful, Client-Focused Journey",
 
   process: [
@@ -54,10 +40,7 @@ const residentialData = {
   ctaText:
     "Connect with trusted property advisors helping buyers and investors navigate premium residential opportunities.",
   ctaButton: "BOOK CONSULTATION",
-
 };
-
-
 
 export default function ResidentialPage() {
   return (

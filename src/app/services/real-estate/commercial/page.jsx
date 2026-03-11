@@ -5,24 +5,9 @@ import Header from "@/app/componats/Header";
 const banner = "/assets/img/image/commercial.jpeg";
 
 const commercialData = {
-  title: "Commercial Real Estate",
+  title: "Tailored Commercial Property Solutions",
   subtitle:
-    "Strategic advisory and acquisition services for premium commercial properties and business spaces.",
-
-  services: [
-    {
-      title: "Office Spaces",
-      desc: "Acquisition and leasing advisory for grade-A office developments.",
-    },
-    {
-      title: "Retail Spaces",
-      desc: "Strategic leasing for high-footfall retail destinations.",
-    },
-    {
-      title: "Commercial Investment",
-      desc: "High-yield investment opportunities in commercial real estate.",
-    },
-  ],
+    "Expert guidance and investment advisory for high-value commercial spaces and business-ready properties.",
 
   projects: [
     {
@@ -39,20 +24,21 @@ const commercialData = {
       ],
     },
   ],
-   processTitle: "OUR PROCESS",
-  processHeading: "A Thoughtful, Client-Focused Journey",
+
+  processTitle: "OUR PROCESS",
+  processHeading: "A Strategic, Client-Driven Journey",
 
   process: [
-    "Discovery Meeting",
-    "Market Analysis & Planning",
-    "Property Selection",
-    "Ongoing Investment Guidance",
+    "Initial Consultation",
+    "Market Research & Insights",
+    "Property Evaluation",
+    "Long-Term Asset Advisory",
   ],
 
-  ctaTitle: "A Personal Discussion About Your Home Goals",
+  ctaTitle: "A Private Conversation About Your Property Plans",
   ctaText:
-    "Connect with trusted property advisors helping buyers and investors navigate premium residential opportunities.",
-  ctaButton: "BOOK CONSULTATION",
+    "Speak with experienced advisors guiding buyers and investors toward valuable residential opportunities.",
+  ctaButton: "SCHEDULE CONSULTATION",
 };
 
 export default function CommercialPage() {
