@@ -39,6 +39,20 @@ const commercialData = {
       ],
     },
   ],
+   processTitle: "OUR PROCESS",
+  processHeading: "A Thoughtful, Client-Focused Journey",
+
+  process: [
+    "Discovery Meeting",
+    "Market Analysis & Planning",
+    "Property Selection",
+    "Ongoing Investment Guidance",
+  ],
+
+  ctaTitle: "A Personal Discussion About Your Home Goals",
+  ctaText:
+    "Connect with trusted property advisors helping buyers and investors navigate premium residential opportunities.",
+  ctaButton: "BOOK CONSULTATION",
 };
 
 export default function CommercialPage() {

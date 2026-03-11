@@ -5,22 +5,22 @@ import Header from "@/app/componats/Header";
 const banner = "/assets/img/image/residential.jpeg";
 
 const residentialData = {
-  title: "Residential Real Estate",
+  title: "Premium Residential Living",
   subtitle:
-    "Premium advisory and transaction services for luxury residential developments and signature homes.",
+    "Strategic guidance and curated property solutions for modern homes and smart residential investments.",
 
   services: [
     {
-      title: "Luxury Apartments",
-      desc: "Advisory for high-end apartments and residential communities in prime locations.",
+      title: "Premium Apartments",
+      desc: "Expert guidance for upscale apartments and modern residential developments in sought after neighborhoods.",
     },
     {
-      title: "Villas & Independent Homes",
-      desc: "Exclusive representation for villas and independent residential properties.",
+      title: "Villas & Private Homes",
+      desc: "Dedicated advisory for luxury villas and spacious independent homes in prime residential areas.",
     },
     {
-      title: "Residential Investment",
-      desc: "Strategic property investments for long-term wealth and rental income.",
+      title: "Smart Property Investments",
+      desc: "Curated residential opportunities designed for long term growth, stability, and attractive rental potential.",
     },
   ],
 
@@ -40,7 +40,24 @@ const residentialData = {
       ],
     },
   ],
+   processTitle: "OUR PROCESS",
+  processHeading: "A Thoughtful, Client-Focused Journey",
+
+  process: [
+    "Discovery Meeting",
+    "Market Analysis & Planning",
+    "Property Selection",
+    "Ongoing Investment Guidance",
+  ],
+
+  ctaTitle: "A Personal Discussion About Your Home Goals",
+  ctaText:
+    "Connect with trusted property advisors helping buyers and investors navigate premium residential opportunities.",
+  ctaButton: "BOOK CONSULTATION",
+
 };
+
+
 
 export default function ResidentialPage() {
   return (
