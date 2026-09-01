@@ -9,21 +9,21 @@ const commercialData = {
   subtitle:
     "Expert guidance and investment advisory for high-value commercial spaces and business-ready properties.",
 
-  projects: [
-    {
-      name: "Tanushree Arcade (Commercial)",
-      images: [
-        "/assets/img/image/Artboard 5.jpg",
-        "/assets/img/image/Artboard 6.jpg",
-        "/assets/img/image/Artboard 7.jpg",
-        "/assets/img/image/Artboard 8.jpg",
-        "/assets/img/image/Artboard 9.jpg",
-        "/assets/img/image/Artboard 10.jpg",
-        "/assets/img/image/Artboard 11.jpg",
-        "/assets/img/image/Artboard 12.jpg",
-      ],
-    },
-  ],
+  // projects: [
+  //   {
+  //     name: "Tanushree Arcade (Commercial)",
+  //     images: [
+  //       "/assets/img/image/Artboard 5.jpg",
+  //       "/assets/img/image/Artboard 6.jpg",
+  //       "/assets/img/image/Artboard 7.jpg",
+  //       "/assets/img/image/Artboard 8.jpg",
+  //       "/assets/img/image/Artboard 9.jpg",
+  //       "/assets/img/image/Artboard 10.jpg",
+  //       "/assets/img/image/Artboard 11.jpg",
+  //       "/assets/img/image/Artboard 12.jpg",
+  //     ],
+  //   },
+  // ],
 
   processTitle: "OUR PROCESS",
   processHeading: "A Strategic, Client-Driven Journey",
